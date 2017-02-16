@@ -1,0 +1,23 @@
+simulate_jwst_R100.py  and  simulate_wfirst_grism.py  are twopython codes that make fake spectra.
+  jrigby, aug/sept 2015   jane.rigby@gmail.com
+
+
+    simulate_wfirst_grism.py  Makes fake WFIRST grism spectra.  Default example is for a z=4 QSO.
+    			      Adds noise, currently set to the HLS survey depth.
+
+    simulate_jwst_R100.py     Makes fake R=100 JWST/NIRSpec spectra.  Default example is a z=8 QSO
+    			      that a WFIRST photometric survey might find.  Adds noise, currently
+			      set to the JWST/NIRSpec depth in 10,000s.
+
+Call on command line as:  
+     /Volumes/Apps_and_Docs/JRR_Utils/anaconda/bin/python  simulate_jwst_R100.py
+     /Volumes/Apps_and_Docs/JRR_Utils/anaconda/bin/python  simulate_wfirst_grism.py 
+
+A note about libraries:  
+  As always with python, the fun in sharing code is getting the same libraries.  The main libraries
+  I've used are the standard astropy, numpy, and matplotlib.  The one weirdo library I've used is
+  block_reduce in skimage.measure, because it does a nice job of binning down the spectra.  
+
+
+PNG Files:   Several example output spectra.  They're explained in my IAU talk,  ../JRR_IAU_talk.
+

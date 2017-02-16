@@ -1,0 +1,68 @@
+What can WFIRST do about AGN?  A bullpen of ideas:
+- color selection for high z AGN?  see Fan presentation.  Need LSST?
+- variability selection from photometry?
+- NLAGN in grism survey:  The BPT diagram lines are available for z=1.76--1.95. 
+- BLAG in grism survey, from line widths
+- Coronography of nearby AGN
+
+- BLAGN in grism survey:  WFIRST grism can spectrally resolve lines with v>550 km/s, unlike WFC3/G141 
+  	Redshift ranges:  Hb z=1.8-3.0, MgII z=3.8-6, CIV  z=7.7-11.6, Lya z=10-15 
+	(the cut-on z for these ranges is where Subaru/PFS survey stops.  So, extend to higher z?)
+   Would need JWST to cross-calibrate the AGN mass diagnostics. 
+    Detection limits below.    Black-hole/bulge mass relation at z~4?  in low-L AGN?
+
+Let's first look at what 3D-HST did.  Far smaller area but similar depth. 
+Trump et al. 2014, spatially resolved emisison line ratios.
+Morris et al. 2015 have a grism emission line catalog for GOODS-S
+       Do they have any AGN?
+
+Varibility searches: Stripe 82 did this, right?
+
+high-z AGN in candels, http://adsabs.harvard.edu/abs/2015A%26A...578A..83G
+
+What have other people written about WFIRST & AGN?
+what-every-astronomer-should-know:
+ The HLS survey will detect ~ 2600 z > 7 quasars, with an estimated 20% of them at z > 8, probing the assembly of billion solar mass black holes in the first Gyr of cosmic history."
+   - bkg for this is in Xiaohu's 1'pager appendix, A-44 of the STD final report, w the right figure
+  JWST integration time:
+H_AB = 26 mag = 1.5E-30 erg/s/cm^2/Hz = 1.5E-7 Jy.  
+The  JWST sensitivity plots shows that NIRSpec gets an R=150, SNR=10 per resln element in 10^4s,
+over huge wavelength range, 0.6-5um, which in rest-frame at z=9 is 600--5000A.  Cool.
+  Nirspec noise level at 3um is 1.3E-8 Jy for standard plot.  
+  	  = 1.3E-8 1E-23 erg/s/cm^2/Hz * 3.E14 um/s / 3um  / 30000A = 4.3E-22 erg/s/cm^2/A
+   High-res spectroscopy is more challenging.  Scaling to continuum plot, ~120 hr to get SNR=10 per pix
+   	    at R=2000.  Use grating to get 0.9-2um, 900-2000A rest-frame.
+   or hit it with a ground-based light-bucket  
+Lin asked, what If there's one bright one H_AB=25?  A: R=2000, SNR=10 pp in 20 hr.  (3.7E-7Jy)
+
+What is the sentivity for grism for BLAGN?..  5E-17 erg/s/cm^2 for narrow line, R=
+   Vandenberk, EW_r of CIV is 24A.  
+z=8 QSO, AB=26 at 1.6um.  --> flam=1.7E-20 erg/s/cm^2/A.  
+    EW_obs = (1.+8)*24A = 216A.
+    So, CIV line flux would be 3.7E-18 erg/s/cm^2.
+    This is 14x fainter than the limit of the HLS grism survey.
+    SO.... I don't think its worth simulating this emission line.  You won't see it in grism survey.
+
+What about emission lines in lower-z QSOs?  Let's do z~4..., same math as above
+  z=4, grism probes 0.27-0.39 um.  So, want the rest-
+  Ross et al. 2013, knee in z=3.5 LF is about m_i=-27.  
+      DM to z=4 is 47.7.  So, a typical QSO is ~20.7 in in vega mags.  That's i~21.2 in AB mags.
+      nicmos calculator says flam =1.89E-18 erg/cm2/s/A  
+     MgII available from z=3.8 to 6.  vandenbertk , W=32A.
+     f(line) = W*(1+z)*flam = 3E-16 erg/s/cm^2
+     This is 6x brighter than the nominal detection limit of HLS grism survey.  
+     Also, MgII will be spatially resolved, so can estimate masses.  
+     
+
+# convert from line sensitivity for HLS to continuum sensitivity:
+    # PSSL (W/m^2) = 3.0E-15 PSSC (mJy) / R / lambda (micron)
+      PSSC(mJy) =  PSSL(W/m^2)  / 3E-15 * R * lambda(micron)
+                       = 5E-17 erg/s/cm^2 / 5. * (1W/m^2)/(1000 erg/s/cm^2) / 3E-15 * 700 * 1.65um
+    		       = 0.004 mJy
+      PSSC(cgs)  = 3.9E-29 erg/s/cm^2/Hz
+
+     flambda  =  fnu dnu/dlambda        c/lambda^2 = dnu/dlambda
+     	      	     = fnu c/lambda^2
+		     = fnu * 3E14 um/s / 1.65um / 16500A
+		     = pssc(cgs) * 3E14 um/s / 1.65um / 16500A
+		     = 4E-19  erg/s/cm^2/A. 
